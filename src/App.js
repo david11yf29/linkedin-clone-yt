@@ -3,8 +3,15 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <h1>Lets build a Linkedin CLONE</h1>
+
+      {/* Header */}
+
+      {/* App Body */}
+        {/* Sidebar */}
+        {/* Feed */}
+        {/* Widgets */}
     </div>
   );
 }
