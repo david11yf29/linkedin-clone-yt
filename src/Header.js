@@ -28,6 +28,7 @@ const Header = () => {
         <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderOption Icon={ChatIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
+        <HeaderOption avatar="https://upload.wikimedia.org/wikipedia/commons/9/94/USC_Trojans_logo.svg" title="me" />
       </div>
 
     </div>
