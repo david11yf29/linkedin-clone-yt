@@ -6,10 +6,9 @@ import SearchIcon from '@material-ui/icons/Search';
 const Header = () => {
   return (
     <div className="header">
-      <h1>This is the header</h1>
 
       <div className="header__left">
-        <img src="" alt="" />
+        <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" alt="" />
 
         <div className="header__search">
           <SearchIcon />
