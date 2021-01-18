@@ -7,7 +7,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <img src="" alt="" />
+        <img src="https://philippemonthoux.com/blog/wp-content/uploads/2013/07/Portobello-Beach-Edinburgh.jpg" alt="" />
         <Avatar className="sidebar__avatar" />
         <h2>David Lin</h2>
         <h4>david11yf29@gmail.com</h4>
