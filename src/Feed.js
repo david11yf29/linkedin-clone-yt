@@ -30,11 +30,11 @@ const Feed = () => {
   const sendPost = (event) => {
     event.preventDefault();
 
-    // db.collection('posts').add({
-    //   name: 'David Lin',
-    //   description: 'this is a test',
-    //   message: event.target.value
-    // })
+    db.collection('posts').add({
+      name: 'David Lin',
+      description: 'this is a test',
+      message: event.target.value
+    })
   };
 
 
@@ -44,7 +44,7 @@ const Feed = () => {
         <div className="feed__input">
           <CreateIcon />
           <form>
-            <input value={input} type="text" />
+            <input value={input} onChange={(e) => setInput(e.target.value)} type="text" />
             <button onClick={sendPost} type="submit">Send</button>
           </form>
         </div>
