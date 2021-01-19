@@ -19,6 +19,9 @@ const Feed = () => {
 
   useEffect(() => {
     db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+      // snapshot.docs = array of posts
+      // 每次 render 就去更新 posts state 
+      // posts = [ {id: __, data: __}, {}, {}, ... ]
       setPosts(snapshot.docs.map((doc) => {
         return {
           id: doc.id,
@@ -31,6 +34,7 @@ const Feed = () => {
   const sendPost = (event) => {
     event.preventDefault();
 
+    // 有 id 的 doc
     db.collection('posts').add({
       name: 'David Lin',
       description: 'this is a test',
