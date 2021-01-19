@@ -19,7 +19,7 @@ const Feed = () => {
 
   useEffect(() => {
     db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
-      // snapshot.docs = array of posts
+      // snapshot.docs = posts 的 array 裡面很多 post
       // 每次 render 就去更新 posts state 
       // posts = [ {id: __, data: __}, {}, {}, ... ]
       setPosts(snapshot.docs.map((doc) => {
