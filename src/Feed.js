@@ -10,6 +10,7 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 import { db } from './firebase';
+import firebase from 'firebase';
 
 const Feed = () => {
   // Hook
@@ -33,8 +34,12 @@ const Feed = () => {
     db.collection('posts').add({
       name: 'David Lin',
       description: 'this is a test',
-      message: event.target.value
-    })
+      message: input,
+      photoUrl: '',
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    setInput('');
   };
 
 
@@ -57,12 +62,11 @@ const Feed = () => {
       </div>
 
       {/* Posts */}
-      {posts.map((post) => {
+      {posts.map(({ id, data: { name, description, message, photoUrl } }) => {
         return (
-          <Post />
+          <Post key={id} name={name} description={description} message={message} photoUrl={photoUrl} />
         )
       })}
-      <Post name="David Lin" description="This is a test" message="Message worked" />
     </div>
   )
 }
