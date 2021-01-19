@@ -10,8 +10,12 @@ import EventNoteIcon from '@material-ui/icons/EventNote';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 
 const Feed = () => {
+  // Hook
+  const [posts, setPosts] = useState([]);
 
-  const [posts, setPosts] = useState([])
+  const sendPost = (event) => {
+    event.preventDefault();
+  }
 
   return (
     <div className="feed">
@@ -20,7 +24,7 @@ const Feed = () => {
           <CreateIcon />
           <form>
             <input type="text" />
-            <button type="submit">Send</button>
+            <button onClick={sendPost} type="submit">Send</button>
           </form>
         </div>
         <div className="feed__inputOptions">
@@ -32,6 +36,11 @@ const Feed = () => {
       </div>
 
       {/* Posts */}
+      {posts.map((post) => {
+        return (
+          <Post />
+        )
+      })}
       <Post name="David Lin" description="This is a test" message="Message worked" />
     </div>
   )
