@@ -1,6 +1,7 @@
 import React from 'react';
 import './Feed.css';
 import InputOption from './InputOption';
+import Post from './Post';
 
 import CreateIcon from '@material-ui/icons/Create';
 import ImageIcon from '@material-ui/icons/Image';
@@ -28,6 +29,7 @@ const Feed = () => {
       </div>
 
       {/* Posts */}
+      <Post name="David Lin" description="This is a test" message="Message worked" />
     </div>
   )
 }
