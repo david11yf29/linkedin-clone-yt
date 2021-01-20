@@ -8,6 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [profilePic, setProfilePic] = useState('');
 
   const loginToApp = (e) => {
     e.preventDefault();
@@ -27,7 +28,11 @@ const Login = () => {
           value={name} 
           onChange={(e) => setName(e.target.value)} 
           type="text" />
-        <input placeholder="Profile pic URL (optional)" type="text" />
+        <input 
+          placeholder="Profile pic URL (optional)" 
+          value={profilePic} 
+          onChange={(e) => setProfilePic(e.target.value)} 
+          type="text" />
         <input 
           placeholder="Email" 
           value={email} 
