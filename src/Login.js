@@ -8,6 +8,7 @@ const Login = () => {
 
       <form>
         <input placeholder="Full name (required if registering)" type="text" />
+        <input  type="text" />
       </form>
     </div>
   )
