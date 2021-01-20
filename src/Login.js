@@ -4,7 +4,7 @@ import './Login.css';
 const Login = () => {
 
   const loginToApp = () => {
-    
+
   };
 
   const register = () => {
@@ -23,8 +23,8 @@ const Login = () => {
         <button type="submit" onClick={loginToApp}>Sign In</button>
       </form>
       <p>
-        Not a member?
-        <span className="login__register" onClick={register} >Register Now</span>
+        Not a member?{" "}
+        <span className="login__register" onClick={register}>Register Now</span>
       </p>
     </div>
   )
