@@ -23,7 +23,7 @@ const Login = () => {
           displayName: userAuth.user.displayName,
           photoUrl: userAuth.user.photoURL
         }))
-      })
+      }).catch(error => alert(error))
   };
 
   const register = () => {
