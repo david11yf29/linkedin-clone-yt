@@ -13,7 +13,6 @@ import { logout } from './features/userSlice';
 import { auth } from './firebase';
 
 const Header = () => {
-
   const dispatch = useDispatch();
 
   const logoutOfApp = () => {
@@ -42,7 +41,7 @@ const Header = () => {
         <HeaderOption Icon={ChatIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
         <HeaderOption 
-          avatar="https://upload.wikimedia.org/wikipedia/commons/9/94/USC_Trojans_logo.svg" 
+          avatar={true}
           title="me"
           onClick={() => logoutOfApp()} />
       </div>

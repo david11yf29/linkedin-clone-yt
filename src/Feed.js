@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
-
+import { useSelector } from 'react-redux';
 import './Feed.css';
-import InputOption from './InputOption';
-import Post from './Post';
 
 import CreateIcon from '@material-ui/icons/Create';
 import ImageIcon from '@material-ui/icons/Image';
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
+
+import InputOption from './InputOption';
+import Post from './Post';
 import { db } from './firebase';
 import firebase from 'firebase';
+import { selectUser } from './features/userSlice';
+
 
 const Feed = () => {
   // Hook
+  const user = useSelector(selectUser);
   const [input, setInput] = useState('');
   const [posts, setPosts] = useState([]);
 
@@ -36,10 +40,10 @@ const Feed = () => {
 
     // 有 id 的 doc
     db.collection('posts').add({
-      name: 'David Lin',
-      description: 'this is a test',
+      name: user.displayName,
+      description: user.email,
       message: input,
-      photoUrl: '',
+      photoUrl: user.photoUrl || '',
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
 
