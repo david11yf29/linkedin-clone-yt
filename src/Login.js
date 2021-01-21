@@ -14,6 +14,16 @@ const Login = () => {
 
   const loginToApp = (e) => {
     e.preventDefault();
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then(userAuth => {
+        dispatch(login({
+          email: userAuth.user.email,
+          uid: userAuth.user.uid,
+          displayName: userAuth.user.displayName,
+          photoUrl: userAuth.user.photoURL
+        }))
+      })
   };
 
   const register = () => {

@@ -17,7 +17,9 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const logoutOfApp = () => {
+    // tell redux
     dispatch(logout())
+    // tell firebase
     auth.signOut();
   }
 
