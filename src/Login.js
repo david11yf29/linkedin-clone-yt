@@ -22,11 +22,13 @@ const Login = () => {
     };
 
     auth.createUserWithEmailAndPassword(email, password)
+      // Created 成功後自動回傳 userAuth token
       .then((userAuth) => {
         userAuth.user.updateProfile({
           displayName: name,
           photoURL: profilePic
         })
+        // user 訊息同步給 redux
         .then(() => {
           dispatch(login({
             email: userAuth.user.email,

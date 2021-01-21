@@ -16,6 +16,7 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(userAuth => {
+      // user is logged in
       if (userAuth) {
         dispatch(login({
           email: userAuth.email,
@@ -24,6 +25,7 @@ function App() {
           photoUrl: userAuth.photoURL
         }))
       } else {
+        // user is logged out 
         dispatch(logout())
       }
     })
